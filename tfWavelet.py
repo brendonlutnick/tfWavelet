@@ -290,7 +290,7 @@ class tfWavelet(object):
                 return tf.transpose(output_T)
             data_upsampled = tf.map_fn(lambda i: matmul1(i), data, parallel_iterations=40)
 
-        ### pad anf make filters 2D
+        ### pad and make filters 2D
         if axis == 0:
             # pad data
             data_pad = tf.pad(data_upsampled, [[0,0],[self.pad_length,self.pad_length],[0,0], \
